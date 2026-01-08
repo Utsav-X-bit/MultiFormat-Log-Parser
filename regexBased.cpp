@@ -33,9 +33,9 @@ LogEntry parseLogLine(const string& line) {
     regex userIdPattern(R"(\b(?:uid|user_id)=([0-9]+)\b)");
     regex timestampPattern(R"(\[\d{1,2}/[A-Za-z]{3}/\d{4}:[^\]]+\]|\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}?)");
 
-    entry.ip        = matchRegex(line, ipPattern, 0);
+    entry.ip        = matchRegex(line, ipPattern,0);
     entry.method    = matchRegex(line, methodPattern);
-    entry.port      = matchRegex(line, portPattern, 2);
+    entry.port      = matchRegex(line, portPattern,0);
     entry.user      = matchRegex(line, userPattern);
     entry.user_id   = matchRegex(line, userIdPattern);
     entry.timestamp = matchRegex(line, timestampPattern, 0);
